@@ -23,6 +23,7 @@
 
     <style>
       .bd-placeholder-img {
+        object-fit: cover;
         font-size: 1.125rem;
         text-anchor: middle;
         -webkit-user-select: none;
@@ -98,6 +99,26 @@
       .bd-mode-toggle .dropdown-menu .active .bi {
         display: block !important;
       }
+
+      .carousel-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .jumbo-heading {
+        padding: 5%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+
     </style>
 
     
@@ -188,33 +209,38 @@
       <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
     </div>
     <div class="carousel-inner">
+      <!-- Carousel Item 1 -->
       <div class="carousel-item active">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+        
+        <img class="bd-placeholder-img" width="100%" height="100%" src="./img/hero1.jpg" aria-hidden="true" alt="scratch programming"/>
+        
         <div class="container">
           <div class="carousel-caption text-start">
-            <h1>Example headline.</h1>
-            <p class="opacity-75">Some representative placeholder content for the first slide of the carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+            <h1>Welcome to the Kids Code Club</h1>
+            <p class="opacity-75">Supported by NatWest Group.</p>
+            <p><a class="btn btn-lg btn-primary" href="./login.html">Sign up today</a></p>
           </div>
         </div>
       </div>
+      <!-- Carousel Item 2 -->
       <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+        <img class="bd-placeholder-img" width="100%" height="100%" src="./img/hero2.jpg" aria-hidden="true" alt="scratch programming"/>
         <div class="container">
           <div class="carousel-caption">
-            <h1>Another example headline.</h1>
-            <p>Some representative placeholder content for the second slide of the carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+            <h1>We help kids thrive and grow</h1>
+            <p>Our goal is to establish and grow a thriving STEM Ambassador community to inspire the next generation to choose STEM</p>
+            <p><a class="btn btn-lg btn-primary" href="./about.html">Learn more</a></p>
           </div>
         </div>
       </div>
+      <!-- Carousel Item 3 -->
       <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+        <img class="bd-placeholder-img" width="100%" height="100%" src="./img/hero3.jpg" aria-hidden="true" alt="scratch programming"/>
         <div class="container">
           <div class="carousel-caption text-end">
-            <h1>One more for good measure.</h1>
-            <p>Some representative placeholder content for the third slide of this carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+            <h1>Get Inspired. Inspire others.</h1>
+            <p>We serve to inspire the next generation of digital creators in our local communities</p>
+            <p><a class="btn btn-lg btn-primary" href="./login.html">Volunteer today</a></p>
           </div>
         </div>
       </div>
@@ -235,26 +261,27 @@
   <!-- Wrap the rest of the page in another container to center all the content. -->
 
   <div class="container marketing">
+    <h1 class="jumbo-heading">Our Learning Community</h1>
 
     <!-- Three columns of text below the carousel -->
     <div class="row">
       <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
-        <h2 class="fw-normal">Heading</h2>
-        <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
-        <p><a class="btn btn-secondary" href="#">View details »</a></p>
+        <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="./img/code-club.png">
+        <h2 class="fw-normal">Code Club</h2>
+        <p>A global network of free coding clubs for 9–13 year olds</p>
+        <p><a class="btn btn-secondary" href="https://codeclub.org/en">View details »</a></p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
-        <h2 class="fw-normal">Heading</h2>
-        <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
-        <p><a class="btn btn-secondary" href="#">View details »</a></p>
+        <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="./img/rbf-logo.png"/>
+        <h2 class="fw-normal">Raspberry Pi Foundation</h2>
+        <p>Empowering young people to use computing technologies to shape the world</p>
+        <p><a class="btn btn-secondary" href="https://www.raspberrypi.org/">View details »</a></p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
-        <h2 class="fw-normal">Heading</h2>
-        <p>And lastly this, the third column of representative placeholder content.</p>
-        <p><a class="btn btn-secondary" href="#">View details »</a></p>
+        <img class="bd-placeholder-img" width="140" height="140" src="./img/code-org.svg"/>
+        <h2 class="fw-normal">Code.org</h2>
+        <p>Every student in every school should have the opportunity to learn computer science</p>
+        <p><a class="btn btn-secondary" href="https://code.org/">View details »</a></p>
       </div><!-- /.col-lg-4 -->
     </div><!-- /.row -->
 
@@ -265,11 +292,14 @@
 
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1">First featurette heading. <span class="text-body-secondary">It’ll blow your mind.</span></h2>
-        <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p>
+        <h2 class="featurette-heading fw-normal lh-1">
+          A Community Led Initiative within NatWest Group
+          <span class="text-body-secondary"> Championing potential</span>
+        </h2>
+        <p class="lead">Fostering collaborative relationships in expanding our club initiatives</p>
       </div>
       <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
+        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="./img/community.jpg"/>
       </div>
     </div>
 
@@ -277,11 +307,11 @@
 
     <div class="row featurette">
       <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading fw-normal lh-1">Oh yeah, it’s that good. <span class="text-body-secondary">See for yourself.</span></h2>
-        <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
+        <h2 class="featurette-heading fw-normal lh-1">Leadership, mentoring and networking <span class="text-body-secondary"> See for yourself.</span></h2>
+        <p class="lead">Creating new opportunities for colleagues to be mentors in our clubs and in local communities offering information, advice and support and sharing their experiences of their journey into banking/technology</p>
       </div>
       <div class="col-md-5 order-md-1">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
+        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="./img/leadership.jpg"/>
       </div>
     </div>
 
@@ -289,11 +319,11 @@
 
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1">And lastly, this one. <span class="text-body-secondary">Checkmate.</span></h2>
-        <p class="lead">And yes, this is the last block of representative placeholder content. Again, not really intended to be actually read, simply here to give you a better view of what this would look like with some actual content. Your content.</p>
+        <h2 class="featurette-heading fw-normal lh-1">Giving Back <span class="text-body-secondary">It's who we are.</span></h2>
+        <p class="lead">Supporting colleauges in sharing their experience, skills and knowledge through the clubs to inspire the next generation of digital creators in our local communities</p>
       </div>
       <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
+        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="./img/giving-back.jpg"/>
       </div>
     </div>
 
