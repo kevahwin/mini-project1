@@ -7,7 +7,15 @@ body {
     padding-bottom: 3rem;
     color: rgb(var(--bs-tertiary-color-rgb));
   }
-  
+
+.btn-primary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #5A287D;
+  --bs-btn-border-color: #58287D;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #3C1053;
+  --bs-btn-hover-border-color: #3C1053
+  }
   
   /* CUSTOMIZE THE CAROUSEL
   -------------------------------------------------- */
