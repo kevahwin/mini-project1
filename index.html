@@ -131,10 +131,18 @@
       [data-bs-theme=dark] .carousel .carousel-indicators [data-bs-target], [data-bs-theme=dark].carousel .carousel-indicators [data-bs-target] {
         background-color: white;
       }
-      #carouselButtons {
-          margin-left: 100px;
-          position: absolute;
-          bottom: 0px;
+      
+
+      .carousel-indicators {
+          align-items: center;
+      }
+
+      #playButton{
+        color: white;
+      }
+
+      #pauseButton{
+        color:white;
       }
 
     </style>
@@ -220,11 +228,17 @@
 
 <main>
 
-  <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+  <div id="myCarousel" class="carousel slide mb-6" >
     <div class="carousel-indicators">
+      <button id="playButton" type="button" class="btn">
+        <i class="bi bi-play-btn glyphicon glyphicon-play"></i>
+     </button>
       <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
       <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
       <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+      <button id="pauseButton" type="button" class="btn ">
+          <i class="bi bi-pause-btn glyphicon glyphicon-pause"></i>
+      </button>
     </div>
     <div class="carousel-inner">
       <!-- Carousel Item 1 -->
@@ -264,13 +278,7 @@
       </div>
     </div> 
     <div id="carouselButtons">
-      <button id="playButton" type="button" class="btn btn-secondary">
-          <i class="bi bi-play-btn glyphicon glyphicon-play"></i>
-       </button>
-      <button id="pauseButton" type="button" class="btn btn-secondary">
-         
-          <i class="bi bi-pause-btn glyphicon glyphicon-pause"></i>
-      </button>
+      
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -468,19 +476,25 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script>
-  $(function () {
-    $('#myCarousel').carousel({
-        
-        pause: "false"
+    var myCarouselElement = document.querySelector('#myCarousel');
+
+    var carousel = new bootstrap.Carousel(myCarouselElement, {
+      interval: 2000,
+      ride: true,
+      pause: false
+    });
+
+    var playButton = document.getElementById("playButton");
+    var pauseButton = document.getElementById("pauseButton");
+   
+    playButton.addEventListener("click", function () {
+        carousel.cycle();
+    });
+
+   pauseButton.addEventListener("click", function () {
+        carousel.pause();
     });
     
-    $('#playButton').click(function () {
-        $('#myCarousel').carousel('cycle');
-    });
-    $('#pauseButton').click(function () {
-        $('#myCarousel').carousel('pause');
-    });
-});
 </script>
 
     
